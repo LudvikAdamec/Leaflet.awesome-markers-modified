@@ -21,28 +21,29 @@
 
     L.AwesomeMarkers.Icon = L.Icon.extend({
         options: {
-            iconSize: [30, 30],
+            //iconSize: [30, 30],
             iconAnchor:   [30, 30],
             popupAnchor: [1, -32],
             shadowAnchor: [10, 12],
             shadowSize: [36, 16],
             className: 'awesome-marker',
-            prefix: 'glyphicon',
+            prefix: '',
             spinClass: 'fa-spin',
             extraClasses: '',
-            icon: 'home',
+            icon: 'glyphicon glyphicon-tint',
             iconColor: 'white',
 
             /* Added by Lu2 */
-            backgroundColor: 'blue',
-            border: '1px solid',
+            fillColor: 'blue',
+            weight: 2,
+            //border: '1px solid',
             borderColor: 'black',
             showShadow: 'yes',
 
-            paddingSize: 3,
-            iconFontSize: 14,
+            fillSize: 23,
+            iconSize: 14,
 
-            opacityMarker: 1
+            opacity: 1
         },
 
         initialize: function (options) {
@@ -68,20 +69,13 @@
 
         _createInner: function() {
             var iconClass, iconSpinClass = "", iconColorClass = "", iconColorStyle = "", options = this.options;
-            var backgroundColorStyle = "; background-color: " + options.backgroundColor;
-            var iconFontSizeStyle = "; font-size: " + options.iconFontSize + 'px';
-            var borderStyle = "; border: " + options.border;
-            var iconHeightSize = "; height: " + ((options.iconFontSize) + options.paddingSize)+ 'px' + "; width: " + ((options.iconFontSize) + options.paddingSize) + 'px' + "; line-height: " + ((options.iconFontSize) + options.paddingSize) + 'px';
-            var opacityMarkerStyle = "; opacity: " + options.opacityMarker;
+            var backgroundColorStyle = "; background-color: " + options.fillColor;
+            var iconFontSizeStyle = "; font-size: " + options.iconSize + 'px';
+            var borderStyle = "; border: " + options.weight + 'px solid';
+            var iconHeightSize = "; height: " + (options.fillSize) + 'px' + "; width: " + (options.fillSize) + 'px' + "; line-height: " + (options.fillSize) + 'px';
+            var opacityMarkerStyle = "; opacity: " + options.opacity;
             var borderColorStyle = "; border-color: " + options.borderColor + ";'";
 
-
-
-            if(options.icon.slice(0,options.prefix.length+1) === options.prefix + "-") {
-                iconClass = options.icon;
-            } else {
-                iconClass = options.prefix + "-" + options.icon;
-            }
 
             if(options.spin && typeof options.spinClass === "string") {
                 iconSpinClass = options.spinClass;
@@ -95,7 +89,8 @@
                 }
             }
 
-            return "<i style = 'border-radius:100px; padding:3px;" + iconColorStyle + opacityMarkerStyle + iconHeightSize + iconFontSizeStyle + backgroundColorStyle + borderStyle + borderColorStyle + "class='" + options.extraClasses + " " + options.prefix + " " + iconClass + " " + iconSpinClass + " " + iconColorClass + "'></i>";
+            return "<i style = 'border-radius:100px; padding:3px;" + iconColorStyle + opacityMarkerStyle + iconHeightSize + iconFontSizeStyle + backgroundColorStyle + borderStyle + borderColorStyle +
+            "class='" + options.extraClasses + " " + options.icon + " " + iconSpinClass + " " + iconColorClass + "'></i>";
         },
 
         _setIconStyles: function (img, name) {
