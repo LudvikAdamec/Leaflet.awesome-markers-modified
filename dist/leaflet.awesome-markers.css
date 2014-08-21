@@ -27,11 +27,11 @@ Version: 1.0
 (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5),(min-resolution: 1.5dppx) {
  .awesome-marker {
   //background-image: url('images/markers-soft@2x.png');
-  background-size: 720px 46px;
+  //background-size: 720px 46px;
  }
  .awesome-marker-shadow {
   //background-image: url('images/markers-shadow@2x.png');
-  background-size: 35px 16px;
+  //background-size: 35px 16px;
  }
 }
 
@@ -46,7 +46,7 @@ Version: 1.0
   color: #fff;
 }
 
-/* Colors */
+/* Colors *//*
 .awesome-marker-icon-red {
   background-position: 0 0;
 }
@@ -122,3 +122,4 @@ Version: 1.0
 .awesome-marker-icon-black {
   background-position: -682px 0;
 }
+*/
