@@ -69,12 +69,12 @@
 
         _createInner: function() {
             var iconClass, iconSpinClass = "", iconColorClass = "", iconColorStyle = "", options = this.options;
-            var backgroundColorStyle = "; background-color: #" + options.fillColor;
+            var backgroundColorStyle = "; background-color: " + options.fillColor;
             var iconFontSizeStyle = "; font-size: " + options.iconSize + 'px';
             var borderStyle = "; border: " + options.weight + 'px solid';
             var iconHeightSize = "; height: " + (options.fillSize) + 'px' + "; width: " + (options.fillSize) + 'px' + "; line-height: " + (options.fillSize) + 'px';
             var opacityMarkerStyle = "; opacity: " + options.opacity;
-            var borderColorStyle = "; border-color: #" + options.color + ";'";
+            var borderColorStyle = "; border-color: " + options.color + ";'";
 
 
             if(options.spin && typeof options.spinClass === "string") {
@@ -85,7 +85,7 @@
                 if(options.iconColor === 'white' || options.iconColor === 'black') {
                     iconColorClass = "icon-" + options.iconColor;
                 } else {
-                    iconColorStyle = "color: #" + options.iconColor;
+                    iconColorStyle = "color: " + options.iconColor;
                 }
             }
 
