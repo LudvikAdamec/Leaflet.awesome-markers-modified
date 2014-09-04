@@ -110,6 +110,8 @@
 
             img.className = 'awesome-marker-' + name + ' ' + options.className;
 
+            anchor = this.options.fillSize / 2;
+
             if (anchor) {
                 img.style.marginLeft = (-anchor.x) + 'px';
                 img.style.marginTop  = (-anchor.y) + 'px';
