@@ -72,7 +72,7 @@
             var backgroundColorStyle = "; background-color: " + options.fillColor;
             var iconFontSizeStyle = "; font-size: " + options.iconSize + 'px';
             var borderStyle = "; border: " + options.weight + 'px solid';
-            var iconHeightSize = "; height: " + (options.fillSize) + 'px' + "; width: " + (options.fillSize) + 'px' + "; line-height: " + (options.fillSize) + 'px';
+            var iconHeightSize = "; height: " + (parseInt(options.fillSize) + (parseInt(options.weight)*2)) + 'px' + "; width: " + (parseInt(options.fillSize) + (parseInt(options.weight)*2)) + 'px' + "; line-height: " + (parseInt(options.fillSize)) + 'px';
             var opacityMarkerStyle = "; opacity: " + options.opacity;
             var borderColorStyle = "; border-color: " + options.color + ";'";
 
@@ -89,7 +89,7 @@
                 }
             }
 
-            return "<i style = 'border-radius:100px; padding:3px;" + iconColorStyle + opacityMarkerStyle + iconHeightSize + iconFontSizeStyle + backgroundColorStyle + borderStyle + borderColorStyle +
+            return "<i style = 'border-radius:100px; padding:0px;" + iconColorStyle + opacityMarkerStyle + iconHeightSize + iconFontSizeStyle + backgroundColorStyle + borderStyle + borderColorStyle +
             "class='" + options.extraClasses + " " + options.icon + " " + iconSpinClass + " " + iconColorClass + "'></i>";
         },
 
