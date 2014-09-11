@@ -72,7 +72,7 @@
             var backgroundColorStyle = "; background-color: " + options.fillColor;
             var iconFontSizeStyle = "; font-size: " + options.iconSize + 'px';
             var borderStyle = "; border: " + options.weight + 'px solid';
-            var iconHeightSize = "; height: " + (parseInt(options.fillSize) + (parseInt(options.weight)*2)) + 'px' + "; width: " + (parseInt(options.fillSize) + (parseInt(options.weight)*2)) + 'px' + "; line-height: " + (parseInt(options.fillSize)) + 'px';
+            var iconHeightSize = "; height: " + (parseInt(options.fillSize) + (parseInt(options.weight)*2)) + 'px' + "; min-width: " + (parseInt(options.fillSize) + (parseInt(options.weight)*2)) + 'px' + "; line-height: " + (parseInt(options.fillSize)+1) + 'px';
             var opacityMarkerStyle = "; opacity: " + options.opacity;
             var borderColorStyle = "; border-color: " + options.color + ";'";
 
@@ -110,14 +110,19 @@
 
             img.className = 'awesome-marker-' + name + ' ' + options.className;
 
-            if (anchor) {
-                img.style.marginLeft = (-((parseInt(this.options.fillSize) + parseInt(this.options.weight) * 2) /2)) + 'px';
-                img.style.marginTop  = img.style.marginLeft;
+           if (anchor) {
+                if(this.options.fillSize != 0) {
+                    img.style.marginLeft = (-((parseInt(this.options.fillSize) + parseInt(this.options.weight) * 2) /2)) + 'px';
+                    img.style.marginTop  = img.style.marginLeft;
+                } else {
+                    img.style.marginLeft = (-((parseInt(this.options.iconSize)) /2)) + 'px';
+                }
             }
 
+
             if (size) {
-                img.style.width  = size.x + 'px';
-                img.style.height = size.y + 'px';
+                img.style.width  = this.options.fillSize + 'px';
+                img.style.height = this.options.fillSize + 'px';
             }
         },
 
