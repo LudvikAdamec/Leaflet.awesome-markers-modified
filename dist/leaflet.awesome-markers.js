@@ -69,10 +69,17 @@
 
         _createInner: function() {
             var iconClass, iconSpinClass = "", iconColorClass = "", iconColorStyle = "", options = this.options;
+
+            var heightOfBackground = 1;
+
+            if(parseInt(options.fillSize)){
+                heightOfBackground = parseInt(options.fillSize) + (parseInt(options.weight)*2);
+            }
+
             var backgroundColorStyle = "; background-color: " + options.fillColor;
             var iconFontSizeStyle = "; font-size: " + options.iconSize + 'px';
             var borderStyle = "; border: " + options.weight + 'px solid';
-            var iconHeightSize = "; height: " + (parseInt(options.fillSize) + (parseInt(options.weight)*2)) + 'px' + "; min-width: " + (parseInt(options.fillSize) + (parseInt(options.weight)*2)) + 'px' + "; line-height: " + (parseInt(options.fillSize)+1) + 'px';
+            var iconHeightSize = "; height: " + heightOfBackground + 'px' + "; min-width: " + (parseInt(options.fillSize) + (parseInt(options.weight)*2)) + 'px' + "; line-height: " + (parseInt(options.fillSize)+1) + 'px';
             var opacityMarkerStyle = "; opacity: " + options.opacity;
             var borderColorStyle = "; border-color: " + options.color + ";'";
 
