@@ -47,8 +47,17 @@
         },
 
         initialize: function (options) {
-            this.options.popupAnchor = [0, -(this.options.fillSize*0.5)];
             options = L.Util.setOptions(this, options);
+
+            var fillSize = this.options.fillSize;
+            var iconSize = this.options.iconSize;
+            if(fillSize > 0){
+                console.log('vetsi pozadi jak : ' + fillSize);
+                this.options.popupAnchor = [0, -(fillSize * 0.5)];
+            } else {
+                this.options.popupAnchor = [0, -(iconSize * 0.5)];
+            }
+
         },
 
         createIcon: function () {
