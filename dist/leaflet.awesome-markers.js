@@ -47,6 +47,7 @@
         },
 
         initialize: function (options) {
+            this.options.popupAnchor = [0, -(this.options.fillSize*0.5)];
             options = L.Util.setOptions(this, options);
         },
 
